@@ -1,0 +1,19 @@
+---
+const { titulo, descripcion } = Astro.props;
+---
+<section>
+    <h2>{titulo}</h2>
+    <p>{descripcion}</p>
+</section>
+
+<style>
+    section{
+        text-align: center;
+        background-color: blue;
+        color: white
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    
+</style>
