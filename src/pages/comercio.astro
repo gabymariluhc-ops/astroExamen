@@ -2,9 +2,42 @@
 import Layouts from '../layouts/Layouts.astro'
 const titulo = "Bienvenido a nuestra tienda";
 const descripcion = "Divi te brinda el poder de administrar una tienda en línea completa.";
+import Card from '../components/card.astro';
+import planta from '../images/planta.jpg'
+import auricular from '../images/auricular.jpg'
+import jarron from '../images/jarron.jpg'
+import silla from '../images/silla.jpg'
+import tabla from '../images/tabla.jpg'
+import cogin from '../images/cogin.jpg'
+import mesa from '../images/mesa.jpg'
+import bolsa from '../images/bolsa.jpg'
+
+
+
 ---
 
 <Layouts titulo={titulo} descripcion={descripcion}>
-
-
+    <section>
+    <Card articulo="Planta de aire"precio="€25.00" puntuacion="★★★★★" descripcion="Plantas de aire " imagen={planta} />
+    <Card articulo="Almohada de dibujos" precio="€15.00" puntuacion="★★★★★" descripcion="Almohada de dibujos animados" imagen={cogin} />
+    <Card articulo="Tabla de cortar" precio="€ 87.00" puntuacion="" descripcion="Tabla de cortar" imagen={tabla} />
+    <Card articulo="Auricular de diseño" precio="€ 80.00" puntuacion="" descripcion="Auriculares de siseño" imagen={auricular} />
+    <Card articulo="Bolsa ecologica" precio="€ 28.00" puntuacion="" descripcion="Bolsa ecologica" imagen={bolsa} />
+    <Card articulo="Planta de aire"precio="€25.00" puntuacion="" descripcion="Plantas de aire " imagen={planta} />
+    <Card articulo="Silla morada" precio="€ 19.00 € 15.00" puntuacion="★★★★★" descripcion="Silla morada" imagen={silla} />
+    <Card articulo="Jarron simple" precio="€ 200.00" puntuacion="" descripcion="Jarron simple" imagen={jarron} />
+    <Card articulo="Mesa de madera" precio="€ 42.00" puntuacion="★★★★★" descripcion="Mesa de madera" imagen={mesa} />
+    </section>
 </Layouts>
+<style>
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        width: 80%;
+        justify-self: center;
+
+    }
+  
+</style>

@@ -1,14 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro"
+const { articulo, precio, descripcion, imagen, puntuacion } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
-<Layout>
+
+
 <div>
-    <li>card1</li>
-    <li>card2/li>
-    <li>card3</li>
-    <li>card4</li>
-    <li>card5</li>
+    <Image src={imagen} alt={descripcion} />
+    <p>{articulo}</p>
+    <p>{puntuacion}</p>
+    <p>{precio}</p>
 </div>
+<style>
     
-</Layout>
+    div {
+        border: 1px solid #faf5f5;
+        border-radius: 0px;
+        text-align: center;
+        width: 20%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0px;
+        :hover{
+            background-color: white ;
+         }
+        }
+
+    p {
+        margin: 8px 0;
+    }
