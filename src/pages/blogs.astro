@@ -1,10 +1,66 @@
 ---
-import Layouts from '../layouts/Layouts.astro'
-const titulo = "Bienvenido a mi blog";
-const descripcion = "Aquí hay un diseño de blog de mampostería sin barra lateral";
+import foto1 from '../images/foto1.jpg';
+import foto2 from '../images/foto2.jpg';
+import foto3 from '../images/foto3.jpg';
+import foto4 from '../images/foto4.jpg';
+import foto5 from '../images/foto5.jpg';
+import foto6 from '../images/foto6.jpg';
+const titulo = "BIenvenido a mi blog";
+const descripcion = "Aquí hay un diseño de blog de mampostería sin barra lateral.";
+import Layouts from '../layouts/Layouts.astro';
+import CartaBlog from '../components/CartaBlog.astro';
 ---
 
 <Layouts titulo={titulo} descripcion={descripcion}>
 
+    <section>
+
+        <CartaBlog 
+        descripcion="Nulla a odio sed magna congue condimentum. Pellentesque convallis enim nec libero vulputate, et rhoncus urna placerat. Phasellus mattis, diam vel vehicula facilisis, erat leo dapibus augue, at mollis tellus ex non nisi. Ut faucibus fringilla semper. Enean nunc ex,..."
+                   
+         titulo="Nunc Volutpat Venenatis"
+        imagen={foto1}
+        autor="Por Nick Roach" fecha="9 de mayo de 2014 " n="4"/>
+
+        <CartaBlog 
+        descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet. Morbi mollis mollis pellentesque. Aenean vitae erat velit." 
+        titulo="Vestíbulo Nisl Felis" 
+        imagen ={foto2}
+        autor="Por Nick Roach" fecha="9 de mayo de 2019" n="5"/>
+
+        <CartaBlog
+         descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet. Morbi mollis mollis pellentesque. Aenean vitae erat velit. "
+         titulo="Proin Eu Augue Efficitur"
+         imagen={foto3}
+         autor="Por Nick Roach" fecha="9 de mayo de 2014 " n="3"/>
+
+        <CartaBlog 
+        descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet. Morbi mollis mollis pellentesque. Aenean vitae erat velit. Maecenas urna sapien, dignissim a augue vitae, porttitor luctus urna. Morbi scelerisque sempre congue. Donec vitae congue quam.  "
+         titulo="Nombre Vulputate Tempus "  
+         imagen={foto4}
+         autor="Por Nick Roach" fecha="9 de mayo de 2014 " n="2"/>
+
+        <CartaBlog 
+        descripcion="Aenean vitae fringilla metus, sed pellentesque nisl. Morbi quis mi tincidunt, consequat risus et, dapibus magna. In lacinia dictum nunc, non dignissim quam.  "  
+        titulo=" Donec Sit Amet Nibh" 
+        imagen={foto5}
+        autor="Por Nick Roach" fecha="9 de mayo de 2014 " n="5"/>
+
+        <CartaBlog 
+        descripcion="Donec vitae congue quam. Pellentesque convallis est a eros porta, ut porttitor magna convallis. Donec quis felis imperdiet, vestibulum est ut, pulvinar dolor. " 
+        titulo=" Mecenas Fringilla Augu "
+        imagen={foto6}
+        autor="Por Nick Roach" fecha="9 de mayo de 2014 " n="3"/>
+
+  </section>
 
 </Layouts>
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+</style>
+
