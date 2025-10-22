@@ -1,0 +1,40 @@
+---
+const {
+  title = "Portafolio de Gaby",
+  description = "Diseñadora creativa y desarrolladora web front-end. Mira mis proyectos, experiencia y contacto.",
+  image = "/preview.jpg", // opcional: imagen para compartir
+  url = "https://tusitio.com", // reemplázalo con tu dominio real
+} = Astro.props;
+
+const fullTitle = title ? `${title}` : "Portafolio de Gaby";
+---
+
+<head>
+  <!-- Meta básicas -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+
+  <!-- SEO -->
+  <title>{fullTitle}</title>
+  <link rel="canonical" href={url} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={url} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Opcional: fuentes o colores del tema -->
+  <meta name="theme-color" content="#111111" />
+</head>

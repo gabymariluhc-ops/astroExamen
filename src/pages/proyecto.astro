@@ -1,10 +1,23 @@
 ---
-import Layouts from '../layouts/Layouts.astro'
+import Layouts from '../layouts/layouts.astro'
 const titulo = "Nombre de su proyecto";
 const descripcion = "Tu subtitulo va aquí";
+import { Image } from 'astro:assets';
+import Proyect from "../images/proyecto.jpg"
 ---
 
 <Layouts titulo={titulo} descripcion={descripcion}>
+    <h1>Este es Mi primer  proyecto </h1>
 
+<Image class="pepe"src= {Proyect} alt="proyecto 1" />
 
 </Layouts>
+<style is:global>
+    
+.pepe {
+    width: 80%;
+    height: 70%;
+    object-fit: cover; /* importante: mantiene cover dentro de la forma */
+    display: block;
+}
+</style>

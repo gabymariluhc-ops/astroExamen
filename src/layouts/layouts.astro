@@ -1,22 +1,30 @@
 ---
-import Footer from "../components/Footer.astro"
-import Header from "../components/Header.astro"
-import Encabezado from "../components/encabezado.astro"
-const { titulo, descripcion } = Astro.props;
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Encabezado from "../components/Encabezado.astro";
+import Head from "../components/Head.astro";
+const { titulo = "Mi sitio Astro", descripcion = "" } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Header/>
-		<Encabezado titulo={titulo} descripcion={descripcion}/>
-		<slot/>
-		<Footer/>
-	</body>
-</html>+
+<html lang="es">
+ <Head title="Inicio | Portafolio de Gaby" 
+    description="Bienvenida al portafolio de Gaby, diseñadora y desarrolladora front-end."  />
+
+  <body>
+	 
+    <!-- Tu encabezado y navegación -->
+    <Header />
+
+    <!-- El encabezado de la página -->
+    <Encabezado titulo={titulo} descripcion={descripcion} />
+
+    <!-- 👇 View Transitions deben ir en el contenedor principal -->
+    <!-- @ts-ignore -->
+<main transition:animate>
+  <slot />
+</main>
+
+
+    <Footer />
+  </body>
+</html>
